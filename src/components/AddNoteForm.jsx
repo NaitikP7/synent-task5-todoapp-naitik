@@ -7,7 +7,7 @@ const AddNoteForm = ({ onAddNote }) => {
   const submitHandler = (e) => {
     e.preventDefault();
     console.log(title, details);
-    onAddNote({ title, details })
+    onAddNote({ title, details})
     setTitle('')
     setDetails('')
   }

@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { CircleCheckBig } from 'lucide-react';
 import { Minus } from 'lucide-react';
 
-const NoteCard = ({ title, details, current }) => {
+const NoteCard = ({idx, title, details, current, completed, onToggleCompleted, deleteCard }) => {
   const colorVariants = [
     'bg-gradient-to-br from-[#f39c12] to-[#e8a76b]',
     'bg-gradient-to-br from-[#1a7659] to-[#2d9b7e]',
@@ -27,14 +27,24 @@ const NoteCard = ({ title, details, current }) => {
   const textClass = textColorVariants[variantIndex];
   const dateClass = dateColorVariants[variantIndex];
 
+
   return (
-    <div className={`h-56 w-56 rounded-3xl flex flex-col relative py-8 px-6  ${bgClass} shadow-xl hover:shadow-2xl transition-shadow duration-300`}>
-        <button className='absolute top-2.5 left-4 justify-center flex items-center hover:bg-white rounded-full cursor-pointer h-5 w-5'>
-            <CircleCheckBig size={20} strokeWidth={3} color='#adadad' />
+    <div className={`h-56 w-56 rounded-3xl flex flex-col relative py-8 px-6 ${bgClass} shadow-xl hover:shadow-2xl transition-all duration-300 ${completed ? 'opacity-50' : ''}`}>
+        <button className='absolute top-2.5 left-4 justify-center flex items-center hover:bg-[#ffffff32] rounded-full cursor-pointer h-6 w-6'
+            onClick={()=>{
+                    onToggleCompleted(idx)
+                    console.log(completed);
+            }}         
+        >
+            <CircleCheckBig size={20} strokeWidth={3} color={completed ? '#22c55e' : '#adadad'} />
+            
         </button>
         <button className='absolute h-4 w-8 bg-red-500 top-2.5 right-4 rounded-full justify-center flex items-center cursor-pointer
-            hover:bg-red-600
-        '>
+            hover:bg-red-600'
+            onClick={()=>{
+                deleteCard(idx)
+            }}
+        >
             <Minus size={28} color="#ffffff" strokeWidth={1.75} />
         </button>
       <div className='flex justify-between items-baseline mb-2'>

@@ -10,10 +10,23 @@ const App = () => {
 
   const handleAddNote = (note) => {
     const copyTask = [...task]
-    copyTask.push(note)
+    copyTask.push({ ...note, completed: false })
     console.log(copyTask)
     setTask(copyTask)
   }
+
+  const toggleCompleted = (index) => {
+    const copyTask = [...task]
+    copyTask[index].completed = !copyTask[index].completed
+    setTask(copyTask)
+  }
+
+  const deleteCard = (index) => {
+    let copyTask = [...task]
+    copyTask.splice(index,1);
+    setTask(copyTask)
+  }
+
 
   return (
     <div className='h-screen lg:flex bg-linear-to-br from-[#fef5e7] via-[#f9e4c8] to-[#fefdf7] text-black'>
@@ -22,7 +35,7 @@ const App = () => {
         <AddNoteForm onAddNote={handleAddNote} />
         <Calendar />
       </div>
-        <NotesList task={task} current={current} />      
+        <NotesList task={task} current={current} onToggleCompleted={toggleCompleted} deleteCard={deleteCard} />      
     </div>
   )
 }
