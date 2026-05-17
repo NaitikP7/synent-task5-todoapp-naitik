@@ -1,0 +1,52 @@
+.sidebar-bg{
+    position: relative;
+    overflow: hidden;
+    background: #fefdf7;
+}
+
+.sidebar-bg::before{
+    content:"";
+
+    position:absolute;
+
+    top:-150px;
+    left:-120px;
+
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    background:#ff8b4d;
+
+    filter:blur(100px);
+
+    opacity:.65;
+}
+
+
+.sidebar-bg::after{
+    content:"";
+
+    position:absolute;
+
+    bottom:-180px;
+    right:-120px;
+
+    width:450px;
+    height:450px;
+
+    border-radius:50%;
+
+    background:#ff6f2f;
+
+    filter:blur(120px);
+
+    opacity:.65;
+}
+
+
+.sidebar-bg > *{
+    position:relative;
+    z-index:1;
+}
