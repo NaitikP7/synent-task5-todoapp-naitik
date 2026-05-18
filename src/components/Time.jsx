@@ -34,7 +34,7 @@ const Time = () => {
   }, [])
 
   return (
-    <div className='flex px-6 py-8 w-full justify-center items-center lg:text-lg font-semibold rounded-3xl 
+    <div className='flex py-8 mt-2 w-full justify-center items-center lg:text-lg font-semibold rounded-3xl 
         bg-linear-to-r from-[#f39c12] via-[#e8a76b] to-[#f5dcc4] shadow-xl
          text-white
     '>
