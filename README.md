@@ -2,7 +2,7 @@
 
 ## Overview
 
-Synent Task 5 is a modern Todo Application built using React and Vite. The application enables users to efficiently manage daily tasks through a clean and responsive interface. Users can create, view, complete, and delete tasks while benefiting from persistent storage using the browser's local storage.
+This is a modern Todo Application built using React and Vite. The application enables users to efficiently manage daily tasks through a clean and responsive interface. Users can create, view, complete, and delete tasks while benefiting from persistent storage using the browser's local storage.
 
 The application also includes a calendar and real-time clock to improve task organization and productivity.
 
